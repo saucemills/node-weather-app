@@ -5,6 +5,7 @@ const mapbox = require('./utils/mapbox')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicPath = path.join(__dirname, '../public')
 const partialsPath = path.join(__dirname, '../views/partials')
@@ -71,6 +72,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Server listening')
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`)
 })
